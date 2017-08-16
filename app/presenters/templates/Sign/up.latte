@@ -1,0 +1,50 @@
+{block content}
+
+
+<div  class="col-sm-offset-4">
+    <h1 n:block=title>Rozhranie pre registraciu zakaznika</h1>
+</div>
+<form n:name="signUpForm" class="form-horizontal">
+    <div class="form-group">
+        <label class="col-sm-4 control-label">Meno:</label>
+        <div class="col-sm-4">
+            <input type="text" n:name="meno" class="form-control" placeholder="Meno">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-4 control-label">Priezvisko:</label>
+        <div class="col-sm-4">
+            <input type="text" n:name="priezvisko" class="form-control" placeholder="Priezvisko">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-4 control-label">Email:</label>
+        <div class="col-sm-4">
+            <input type="email" n:name="email" class="form-control" placeholder="Email">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-4 control-label">Adresa:</label>
+        <div class="col-sm-4">
+            <input type="text" n:name="adresa" class="form-control" placeholder="Adresa">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-4 control-label">Telefón:</label>
+        <div class="col-sm-4">
+            <input type="text" n:name="telefon" class="form-control" placeholder="+421">
+        </div>
+    </div>
+    <div class="form-group">
+        <label n:name="typ_karty" class="col-sm-4 control-label">Typ karty:</label>
+        {* if (is_array($cards) || is_object($cards)) *}
+        <label n:name="typ_karty">
+            <div class="col-sm-12">
+                <select n:name="typ_karty" class="form-control"><option>{label $label}</option></select>
+            </div>
+        </label>
+    </div>
+    <div class="col-sm-offset-4 col-sm-4">
+        <button type="submit" n:name="send" class="btn btn-primary">Registrovať</button>
+    </div>
+</form>

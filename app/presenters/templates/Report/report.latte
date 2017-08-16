@@ -1,0 +1,43 @@
+{block content}
+	<div class="col-sm-offset-4">
+		<h1 n:block=title>Reporty v databaze zakaznikov!</h1>
+	</div>
+	<div class="form-horizontal">
+		<div class="form-group">
+			<label class="col-sm-6 control-label">Pocet zákaznikov: {$pocetZakaznikov}</label>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-6 control-label">Pocet priradenych kariet:{if isset($pocetKariet)} {$pocetKariet}{else}nic{/if}</label>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-6 control-label">Top 10 zákazníků podle obratu nákupů za posledních 30 dní:</label>
+		</div>
+			<div class="col-sm-offset-2 col-sm-8">
+				<table class="table table-hover">
+					<tr>
+						<th>Obrat</th>
+						<th>Pouzitie karty</th>
+						<th>Zbozi</th>
+						<th>ID</th>
+						<th>Meno</th>
+						<th>Priezvisko</th>
+						<th>Datum nakupu</th>
+					</tr>
+					{foreach $top as $t}
+						<tr>
+							<td>{$t->obrat} Kč</td>
+							<td>{$t->pouzitie}</td>
+							<td>{$t->zbozi}</td>
+							<td>{$t->id_zakaznik}</td>
+							<td>{$t->meno}</td>
+							<td>{$t->priezvisko}</td>
+							<td>{$t->datum_nakupu}</td>
+						</tr>
+					{/foreach}
+				</table>
+			</div>
+	</div>
+
+
+
+{/block}
